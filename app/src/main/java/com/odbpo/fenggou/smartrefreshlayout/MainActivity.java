@@ -30,25 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         refreshLayout.autoRefresh();
         refreshLayout.setOnRefreshLoadmoreListener(new OnRefreshLoadmoreListener() {
-            @Override
-            public void onLoadmore(RefreshLayout refreshlayout) {
-                if (page <= 3) {
-                    for (int i = 1; i <= 10; i++) {
-                        mData.add("页数" + page + " 加载条目 " + i);
-                    }
-                    rv.getAdapter().notifyDataSetChanged();
-                    refreshLayout.finishLoadmore();
-                    page++;
-                } else {
-                    rv.getAdapter().notifyDataSetChanged();
-                    refreshLayout.finishLoadmore();
-                    refreshLayout.setLoadmoreFinished(true);
-                }
-
-            }
 
             @Override
-            public void onRefresh(RefreshLayout refreshlayout) {
+            public void onRefresh(RefreshLayout refreshlayout) {//下拉刷新
                 page = 1;
                 mData.clear();
                 for (int i = 1; i <= 20; i++) {
@@ -56,10 +40,28 @@ public class MainActivity extends AppCompatActivity {
                 }
                 rv.getAdapter().notifyDataSetChanged();
                 refreshLayout.finishRefresh();
-                refreshlayout.setEnableLoadmore(true);
+                refreshLayout.setEnableLoadmore(true);
                 refreshLayout.setLoadmoreFinished(false);
                 page++;
             }
+
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {//上拉加载
+                if (page <= 3) {//加载完成
+                    for (int i = 1; i <= 10; i++) {
+                        mData.add("页数" + page + " 加载条目 " + i);
+                    }
+                    rv.getAdapter().notifyDataSetChanged();
+                    refreshLayout.finishLoadmore();
+                    page++;
+                } else {//没有更多数据
+                    rv.getAdapter().notifyDataSetChanged();
+                    refreshLayout.finishLoadmore();
+                    refreshLayout.setLoadmoreFinished(true);
+                }
+
+            }
+
         });
     }
 }
