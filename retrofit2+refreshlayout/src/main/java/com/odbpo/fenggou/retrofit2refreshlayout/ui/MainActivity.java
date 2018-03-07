@@ -1,10 +1,12 @@
-package com.odbpo.fenggou.retrofit2refreshlayout;
+package com.odbpo.fenggou.retrofit2refreshlayout.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.odbpo.fenggou.retrofit2refreshlayout.R;
+import com.odbpo.fenggou.retrofit2refreshlayout.adapter.RvAdapter;
 import com.odbpo.fenggou.retrofit2refreshlayout.bean.Course;
 import com.odbpo.fenggou.retrofit2refreshlayout.net.Net;
 import com.odbpo.fenggou.retrofit2refreshlayout.util.AppToast;
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             page++;
         } else {//上拉加载
             if (tempData.size() < pageLimite) {//没有更多数据
-                refreshLayout.finishLoadmore();//加速加载
+                refreshLayout.finishLoadmore();//结束加载
                 refreshLayout.setLoadmoreFinished(true);
             } else {//加载完成
                 refreshLayout.finishLoadmore();

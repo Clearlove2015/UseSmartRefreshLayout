@@ -1,4 +1,4 @@
-package com.odbpo.fenggou.retrofit2refreshlayout;
+package com.odbpo.fenggou.retrofit2refreshlayout.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.odbpo.fenggou.retrofit2refreshlayout.R;
 import com.odbpo.fenggou.retrofit2refreshlayout.bean.Course;
 import com.odbpo.fenggou.retrofit2refreshlayout.util.AppToast;
 
