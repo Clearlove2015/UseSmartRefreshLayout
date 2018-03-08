@@ -7,7 +7,7 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 /**
- * @author: zjl
+ * @author: zc
  * @Time: 2018/3/7 13:17
  * @Desc:
  */

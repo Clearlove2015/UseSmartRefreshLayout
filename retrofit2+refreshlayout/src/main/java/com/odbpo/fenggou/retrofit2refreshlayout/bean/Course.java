@@ -3,7 +3,7 @@ package com.odbpo.fenggou.retrofit2refreshlayout.bean;
 import java.util.List;
 
 /**
- * @author: zjl
+ * @author: zc
  * @Time: 2018/3/7 13:49
  * @Desc:
  */

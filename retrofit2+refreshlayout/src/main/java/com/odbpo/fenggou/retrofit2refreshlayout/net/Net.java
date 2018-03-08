@@ -7,7 +7,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * @author: zjl
+ * @author: zc
  * @Time: 2018/3/7 13:24
  * @Desc:
  */
