@@ -12,11 +12,16 @@
         app:srlAccentColor="@android:color/white"
         app:srlEnablePreviewInEditMode="true"
         app:srlPrimaryColor="#DBDBDB"
-        app:srlHeaderHeight="60dp"
+        app:srlHeaderHeight="80dp"
         app:srlFooterHeight="40dp">
         <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
         <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+
+        <!--经典样式-->
+        <!--<com.scwang.smartrefresh.layout.header.ClassicsHeader-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+        <com.scwang.smartrefresh.header.DeliveryHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

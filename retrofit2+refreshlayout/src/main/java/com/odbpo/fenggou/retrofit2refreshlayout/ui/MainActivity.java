@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        //initData();
+        initData();
         initRecyclerView();
         initRefreshLayout();
     }
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initRefreshLayout() {
         refreshLayout.setEnableLoadmore(false);
-        refreshLayout.autoRefresh();//自动刷新
+        //refreshLayout.autoRefresh();//自动刷新
         refreshLayout.setOnRefreshLoadmoreListener(new OnRefreshLoadmoreListener() {
 
             @Override
@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
     public void handRefreshOrLoad(final boolean isLoadMore) {
         if (!isLoadMore) {//下拉刷新
             mData.clear();
-            mData.addAll(tempData);
             refreshLayout.finishRefresh();
             refreshLayout.setEnableLoadmore(true);
             refreshLayout.setLoadmoreFinished(false);
@@ -113,13 +112,13 @@ public class MainActivity extends AppCompatActivity {
                 refreshLayout.setLoadmoreFinished(true);
             } else {//加载完成
                 refreshLayout.finishLoadmore();
-                refreshLayout.setLoadmoreFinished(false);
                 page++;
             }
-            mData.addAll(tempData);
         }
 
+        mData.addAll(tempData);
         rvAdapter.notifyDataSetChanged();
+
     }
 
 }
