@@ -31,7 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+        <!--经典样式-->
+        <!--<com.scwang.smartrefresh.layout.footer.ClassicsFooter-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+        <com.scwang.smartrefresh.layout.footer.BallPulseFooter
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
