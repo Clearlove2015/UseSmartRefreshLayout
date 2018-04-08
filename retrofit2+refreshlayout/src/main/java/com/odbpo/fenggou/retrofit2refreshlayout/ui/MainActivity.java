@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void initRefreshLayout() {
         refreshLayout.setEnableLoadmore(false);
+        refreshLayout.setEnableAutoLoadmore(false);//是否启用列表惯性滑动到底部时自动加载更多
+        refreshLayout.setDisableContentWhenRefresh(true);//是否在刷新的时候禁止内容的一切手势操作（默认false）
+        refreshLayout.setDisableContentWhenLoading(true);//是否在加载的时候禁止内容的一切手势操作（默认false）
+        refreshLayout.setEnableLoadmoreWhenContentNotFull(false);//是否在列表不满一页时候开启上拉加载功能
+        refreshLayout.setEnableFooterFollowWhenLoadFinished(false);//是否在全部加载结束之后Footer跟随内容
         //refreshLayout.autoRefresh();//自动刷新
         refreshLayout.setOnRefreshLoadmoreListener(new OnRefreshLoadmoreListener() {
 
